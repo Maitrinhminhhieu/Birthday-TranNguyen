@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .chat-box {
+      display: none;
+      width: 90%;
+      max-width: 400px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+    }
+    .chat-box h2 {
+      margin-bottom: 20px;
+    }
+    .input-container {
+      margin: 20px 0;
+    }
+    input {
+      width: calc(100% - 30px);
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .birthday-scene {
+      display: none;
+      text-align: center;
+      background-color: #ffefd5;
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .birthday-message {
+      font-size: 18px;
+      line-height: 1.5;
+      margin: 20px;
+    }
+    .fireworks {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://media.giphy.com/media/xUOwGdcGMZ8ZNO8CCM/giphy.gif');
+      background-size: cover;
+      opacity: 0.7;
+    }
+    .end-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .end-button:hover {
+      background: #218838;
+    }
+  </style>
+</head>
+<body>
+
+<div class="chat-box">
+  <h2>Xin chào! Hãy nhập tên của bạn:</h2>
+  <div class="input-container">
+    <input type="text" id="userName" placeholder="Nhập tên của bạn...">
+  </div>
+  <button onclick="showBirthdayScene()">Gửi</button>
+</div>
+
+<div class="birthday-scene">
+  <div class="fireworks"></div>
+  <div class="birthday-message">
+    Chúng ta chỉ vô tình gặp nhau trong chuyến đi Đà Lạt ngắn ngủi, phải không? 
+    Một ngày trôi qua thật nhanh, nhưng những khoảnh khắc ấy vẫn đủ để lại một điều gì đó đẹp đẽ trong lòng tôi. <br><br>
+    Dù chưa thân, chưa hiểu nhiều về nhau, nhưng việc được quen biết bạn cũng đã là một món quà đáng trân quý đối với tôi. <br><br>
+    Hôm nay là ngày thật đặc biệt – ngày mà thế giới chào đón bạn, mang bạn đến để thắp sáng cuộc sống của những người xung quanh. 
+    <br><br> Chúc bạn một sinh nhật thật ý nghĩa, một tuổi mới đầy niềm vui và hy vọng. Hãy sống thật hạnh phúc, thật trọn vẹn, và luôn là chính mình. Sinh nhật vui vẻ nhé!
+  </div>
+  <button class="end-button" onclick="endMessage()">Kết thúc</button>
+</div>
+
+<script>
+  // Khi trang mở, hiện hộp chat
+  window.onload = () => {
+    document.querySelector('.chat-box').style.display = 'block';
+  };
+
+  function showBirthdayScene() {
+    const userName = document.getElementById('userName').value.trim();
+    if (!userName) {
+      alert('Vui lòng nhập tên của bạn!');
+      return;
+    }
+    document.querySelector('.chat-box').style.display = 'none';
+    document.querySelector('.birthday-scene').style.display = 'flex';
+  }
+
+  function endMessage() {
+    alert('Cảm ơn bạn đã tham gia!');
+    location.reload();
+  }
+</script>
+
+</body>
+</html>
